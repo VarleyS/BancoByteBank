@@ -15,6 +15,10 @@ namespace BancoByteBank
             contaCorrente.Numero = 214545;
             contaCorrente.Saldo = 100;
 
+            Console.WriteLine("Saldo: " + contaCorrente.Saldo);
+
+            contaCorrente.Sacar(50);
+
 
 
             Console.WriteLine("Nome do titular: " + contaCorrente.Titular);
