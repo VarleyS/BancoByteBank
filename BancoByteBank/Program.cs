@@ -17,13 +17,15 @@ namespace BancoByteBank
 
             Console.WriteLine("Saldo: " + contaCorrente.Saldo);
 
-            contaCorrente.Sacar(50);
+            bool resultado = contaCorrente.Sacar(500);
 
 
+            Console.WriteLine(resultado);
 
-            Console.WriteLine("Nome do titular: " + contaCorrente.Titular);
-            Console.WriteLine("Agencia: " + contaCorrente.Agencia);
-            Console.WriteLine("Número: " + contaCorrente.Numero);
+            Console.WriteLine("Saldo: " + contaCorrente.Saldo);
+
+            contaCorrente.Depositar(500);
+
             Console.WriteLine("Saldo: " + contaCorrente.Saldo);
 
             Console.ReadLine();
