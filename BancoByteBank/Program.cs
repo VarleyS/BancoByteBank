@@ -8,43 +8,20 @@ namespace BancoByteBank
     {
         static void Main(string[] args)
         {
-            ContaCorrente contaCorrente = new ContaCorrente();
+            Cliente gabriela = new Cliente();
 
-            contaCorrente.Titular = "Bruno";
-            contaCorrente.Agencia = 864;
-            contaCorrente.Numero = 214545;
-            contaCorrente.Saldo = 100;
+            gabriela.Nome = "Gabriela";
+            gabriela.Profissao = "Dev c#";
+            gabriela.CPF = "111.111.111.11";
 
-            Console.WriteLine("Saldo: " + contaCorrente.Saldo);
+            ContaCorrente conta = new ContaCorrente();
 
-            bool resultado = contaCorrente.Sacar(500);
-
-
-            Console.WriteLine(resultado);
-
-            Console.WriteLine("Saldo: " + contaCorrente.Saldo);
-
-            contaCorrente.Depositar(500);
-
-            Console.WriteLine("Saldo: " + contaCorrente.Saldo);
+            conta.titular = gabriela;
+            conta.Agencia = 652;
+            conta.Numero = 5652358;
+            conta.Saldo = 100;
 
 
-            ContaCorrente contaGabriela = new ContaCorrente();
-
-            contaGabriela.Titular = "Gabriela";
-            contaGabriela.Saldo = 100;
-
-            Console.WriteLine("Saldo Bruno: " + contaCorrente.Saldo);
-            Console.WriteLine("Saldo Gabriela: " + contaGabriela.Saldo);
-
-            contaCorrente.Transferir(200, contaGabriela);
-
-            Console.WriteLine("Saldo Bruno: " + contaCorrente.Saldo);
-            Console.WriteLine("Saldo Gabriela: " + contaGabriela.Saldo);
-
-            bool resultadoTranferencia = contaCorrente.Transferir(200, contaGabriela);
-
-            Console.WriteLine("Resultado da transferência: " + resultadoTranferencia);
 
             Console.ReadLine();
         }
