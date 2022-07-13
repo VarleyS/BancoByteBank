@@ -1,38 +1,41 @@
-﻿
+﻿using BancoByteBank;
 
-public class ContaCorrente
+namespace BancoByteBank
 {
-    public string Titular;
-    public int Agencia;
-    public int Numero;
-    public double Saldo;
-
-
-    public bool Sacar(double valor)
+    public class ContaCorrente
     {
-        if(this.Saldo < valor)
+        public Cliente titular;
+        public int Agencia;
+        public int Numero;
+        public double Saldo;
+
+
+        public bool Sacar(double valor)
         {
-            return false;
+            if (this.Saldo < valor)
+            {
+                return false;
+            }
+
+            this.Saldo -= valor;
+            return true;
+
         }
-        
-        this.Saldo -= valor;
-        return true;
-        
-    }
 
-    public void Depositar(double valor)
-    {
-        this.Saldo += valor;
-    } 
-
-    public bool Transferir(double valor, ContaCorrente contaDestino)
-    {
-        if(this.Saldo < valor)
+        public void Depositar(double valor)
         {
-            return false;
+            this.Saldo += valor;
         }
-        this.Saldo -= valor;
-        contaDestino.Depositar(valor);
-        return true;
+
+        public bool Transferir(double valor, ContaCorrente contaDestino)
+        {
+            if (this.Saldo < valor)
+            {
+                return false;
+            }
+            this.Saldo -= valor;
+            contaDestino.Depositar(valor);
+            return true;
+        }
     }
 }
