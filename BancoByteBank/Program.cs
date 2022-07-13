@@ -16,12 +16,12 @@ namespace BancoByteBank
 
             ContaCorrente conta = new ContaCorrente();
 
-            conta.titular = gabriela;
+            conta.Titular = gabriela;
             conta.Agencia = 652;
             conta.Numero = 5652358;
-            conta.Saldo = 100;
+            conta.DefinirSaldo(100);
 
-
+            Console.WriteLine(conta.ObterSaldo());
 
             Console.ReadLine();
         }

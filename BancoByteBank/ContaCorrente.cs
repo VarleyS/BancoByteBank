@@ -4,36 +4,52 @@ namespace BancoByteBank
 {
     public class ContaCorrente
     {
-        public Cliente titular;
-        public int Agencia;
-        public int Numero;
-        public double Saldo;
+        public Cliente Titular { get; set; }
+        public int Agencia { get; set; }
+        public int Numero { get; set; }
+        private double Saldo;
+
+        public void DefinirSaldo(double saldo)
+        {
+            if(saldo < 0)
+            {
+                return;
+            }
+            
+            this.Saldo = saldo;
+           
+        }
+
+        public double ObterSaldo()
+        {
+            return Saldo;
+        }
 
 
         public bool Sacar(double valor)
         {
-            if (this.Saldo < valor)
+            if (Saldo < valor)
             {
                 return false;
             }
 
-            this.Saldo -= valor;
+            Saldo -= valor;
             return true;
 
         }
 
         public void Depositar(double valor)
         {
-            this.Saldo += valor;
+            Saldo += valor;
         }
 
         public bool Transferir(double valor, ContaCorrente contaDestino)
         {
-            if (this.Saldo < valor)
+            if (Saldo < valor)
             {
                 return false;
             }
-            this.Saldo -= valor;
+            Saldo -= valor;
             contaDestino.Depositar(valor);
             return true;
         }
