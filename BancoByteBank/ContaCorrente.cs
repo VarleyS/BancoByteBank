@@ -10,6 +10,14 @@ namespace BancoByteBank
         private double Saldo;
         public static int TotalDeContasCriadas { get; private set; }
 
+        public ContaCorrente(int agencia, int numero)
+        {
+            Agencia = agencia;
+            Numero = numero;
+
+            TotalDeContasCriadas++;
+        }
+
         public void DefinirSaldo(double saldo)
         {
             if(saldo < 0)
@@ -24,14 +32,6 @@ namespace BancoByteBank
         public double ObterSaldo()
         {
             return Saldo;
-        }
-
-        public ContaCorrente(int agencia, int numero)
-        {
-            Agencia = agencia;
-            Numero = numero;
-
-            TotalDeContasCriadas++;
         }
 
         public bool Sacar(double valor)

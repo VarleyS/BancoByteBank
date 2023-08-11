@@ -8,43 +8,46 @@ namespace BancoByteBank
     {
         static void Main(string[] args)
         {
-            Cliente gabriela = new Cliente();
+            Menu _menu = new Menu();
 
-            gabriela.Nome = "Gabriela";
-            gabriela.Profissao = "Dev c#";
-            gabriela.CPF = "111.111.111.11";
+            _menu.MenuBoasVindas();
+            //Cliente gabriela = new Cliente();
 
-            ContaCorrente conta = new ContaCorrente(652, 5652358);
+            //gabriela.Nome = "Gabriela";
+            //gabriela.Profissao = "Dev c#";
+            //gabriela.CPF = "111.111.111.11";
 
-            conta.Titular = gabriela;
-            conta.DefinirSaldo(100);
+            //ContaCorrente conta = new ContaCorrente(652, 5652358);
 
-            Console.WriteLine(conta.Titular.Nome);
-            Console.WriteLine(conta.Agencia);
-            Console.WriteLine(conta.Numero);
-            Console.WriteLine(conta.ObterSaldo());
+            //conta.Titular = gabriela;
+            //conta.DefinirSaldo(100);
 
-            Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
+            //Console.WriteLine(conta.Titular.Nome);
+            //Console.WriteLine(conta.Agencia);
+            //Console.WriteLine(conta.Numero);
+            //Console.WriteLine(conta.ObterSaldo());
 
-            Cliente bruno = new Cliente();
+            //Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
 
-            bruno.Nome = "Bruno";
-            bruno.Profissao = "Dev c#";
-            bruno.CPF = "222.222.222-22";
+            //Cliente bruno = new Cliente();
 
-            ContaCorrente contaBruno = new ContaCorrente(652, 5652358);
+            //bruno.Nome = "Bruno";
+            //bruno.Profissao = "Dev c#";
+            //bruno.CPF = "222.222.222-22";
 
-            contaBruno.Titular = bruno;
-            contaBruno.DefinirSaldo(200);
+            //ContaCorrente contaBruno = new ContaCorrente(652, 5652358);
 
-            Console.WriteLine(contaBruno.Titular.Nome);
-            Console.WriteLine(contaBruno.Agencia);
-            Console.WriteLine(contaBruno.Numero);
-            Console.WriteLine(contaBruno.ObterSaldo());
+            //contaBruno.Titular = bruno;
+            //contaBruno.DefinirSaldo(200);
 
-            Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
+            //Console.WriteLine(contaBruno.Titular.Nome);
+            //Console.WriteLine(contaBruno.Agencia);
+            //Console.WriteLine(contaBruno.Numero);
+            //Console.WriteLine(contaBruno.ObterSaldo());
 
-            Console.ReadLine();
+            //Console.WriteLine(ContaCorrente.TotalDeContasCriadas);
+
+            //Console.ReadLine();
         }
     }
 }
