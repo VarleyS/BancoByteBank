@@ -7,6 +7,7 @@ namespace BancoByteBank
         public Cliente Titular { get; set; }
         public int Agencia { get; set; }
         public int Numero { get; set; }
+
         private double Saldo;
         public static int TotalDeContasCriadas { get; private set; }
 
