@@ -46,6 +46,7 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Service\ClienteService.cs" />
+    <Compile Include="Service\ContaCorrenteService.cs" />
     <Compile Include="TituloDaOpcaoSelecionada.cs" />
   </ItemGroup>
   <ItemGroup>

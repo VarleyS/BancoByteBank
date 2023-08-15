@@ -11,14 +11,17 @@ namespace BancoByteBank.Service
     public class ClienteService
     {
         Menu menu = new Menu();
-        readonly Cliente cliente;
+        Cliente cliente = new Cliente();
         List<Cliente> clientes = new List<Cliente>();
         TituloDaOpcaoSelecionada titulo = new TituloDaOpcaoSelecionada();
 
         public void CadastraCliente()
         {
+            ObtemListaDeClientes();
             Console.Clear();
             titulo.ExibindoTituloOpcao("Cadastro de Clientes");
+
+            int id = new int();
 
             Console.WriteLine("\nDigite o nome do cliente: ");
             string nome = Console.ReadLine();
@@ -29,8 +32,9 @@ namespace BancoByteBank.Service
             Console.WriteLine("\nDigite a profissão do cliente:\n");
             string profissao = Console.ReadLine();
 
-            clientes.Add(new Cliente(nome, cpf, profissao)
+            clientes.Add(new Cliente(id, nome, cpf, profissao)
             {
+                ID = id,
                 Nome = nome,
                 CPF = cpf,
                 Profissao = profissao
@@ -47,7 +51,7 @@ namespace BancoByteBank.Service
 
         public void RetornaClientesCadastrados()
         {
-            ObtemLista().ToList();
+            ObtemListaDeClientes().ToList();
             Console.Clear();
             titulo.ExibindoTituloOpcao("Exibindo clientes cadastrados");
 
@@ -67,7 +71,7 @@ namespace BancoByteBank.Service
             menu.MenuBoasVindas();
         }
 
-        public IEnumerable<Cliente> ObtemLista()
+        public List<Cliente> ObtemListaDeClientes()
         {
             clientes.Add(new Cliente()
             {

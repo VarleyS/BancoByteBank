@@ -12,6 +12,7 @@ namespace BancoByteBank
         public void MenuBoasVindas()
         {
             ClienteService _clienteService = new ClienteService();
+            ContaCorrenteService _correnteService = new ContaCorrenteService();
 
             Console.WriteLine(@"
 ██████╗░░█████╗░███╗░░██╗░█████╗░░█████╗░  ██████╗░███████╗░█████╗░██╗░░░██╗██████╗░░█████╗░
@@ -42,7 +43,7 @@ namespace BancoByteBank
             {
                 case 1: _clienteService.CadastraCliente();
                     break;
-                case 2: Console.WriteLine("Você digitou opção " + opcao);
+                case 2: _correnteService.AdicionaContaCorrente();
                     break;
                 case 3: _clienteService.RetornaClientesCadastrados();
                     break;

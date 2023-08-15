@@ -11,8 +11,9 @@ namespace BancoByteBank
         public string CPF { get; set; }
         public string Profissao { get; set; }
 
-        public Cliente(string nome, string cpf, string profissao) 
+        public Cliente(int id, string nome, string cpf, string profissao) 
         {
+            ID = id;
             Nome = nome;
             CPF = cpf;
             Profissao = profissao;
